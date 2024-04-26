@@ -216,7 +216,7 @@ const renderGameObject = (gameObject, isSolid = false, pixelColour = "--pixel-co
             bunImage.src = "./burger-solid.svg"
 
             const [x, y] = calculateHexCentreFromGridCentre(value)
-            ctx.drawImage(bunImage, x - 0.5 * hexRadius, y - 0.5 * hexRadius, hexRadius, hexRadius)
+            ctx.drawImage(bunImage, x - 0.65 * hexRadius, y - 0.65 * hexRadius, 1.3 * hexRadius, 1.3 * hexRadius)
 
             bunImage.onerror = (error) => {
                 console.error("Error loading image:", error);
