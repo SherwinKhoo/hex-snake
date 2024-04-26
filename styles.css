@@ -3,7 +3,7 @@
     /* --font-family: "VT323", monospace; */
     --font-size: max(2.5vh, 2.5vw);
     /* --font-weight: 900; */
-    --icon-size: max(3.5vh, 3.5vw); 
+    --icon-size: max(2.5vh, 2.5vw); 
 
     --horizontal-spacing: 1vw;
     --vertical-spacing: 1vh;
@@ -18,7 +18,7 @@ html, body {
     border: 0;
     padding: 0;
 
-    height: 100vh;
+    height: 89vh;
 
     overflow: hidden;
 }
@@ -41,7 +41,7 @@ body {
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: calc((100vh - 2 * var(--vertical-spacing) - var(--vertical-spacing)) * 0.9) calc((100vh - 2 * var(--vertical-spacing) - var(--vertical-spacing)) * 0.1);
+    grid-template-rows: calc((89vh - 2 * var(--vertical-spacing) - var(--vertical-spacing)) * 0.9) calc((89vh - 2 * var(--vertical-spacing) - var(--vertical-spacing)) * 0.1);
     column-gap: var(--horizontal-spacing);
     row-gap: var(--vertical-spacing);
 }
