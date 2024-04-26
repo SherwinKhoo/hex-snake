@@ -232,6 +232,12 @@ renderGameObject(myFood)
 renderGameObject(myAnaconda)
 renderGameObject(myGrid)
 
+// MARK: Vibration
+
+const effectTactileFeedback = () => {
+    navigator.vibrate(15);
+}
+
 // MARK: Directions
 
 const directionsArray = [
@@ -289,19 +295,21 @@ const handleStartReset = () => {
 
     const buttonCentre = document.getElementById("button-centre")
     buttonCentre.innerHTML = ``
-    
     const iconRestart = document.createElement("i")
     iconRestart.className = "fa-solid fa-arrows-rotate"
-    
-    buttonCentre.append(iconRestart)  
+    buttonCentre.append(iconRestart)
+
+    effectTactileFeedback()
 }
 
 const handleLeftTurn = () => {
     indexDirection = calculateModulatedIndexDirected(indexDirection - 1 + 6)
+    effectTactileFeedback()
     console.log("Left", directionsArray[indexDirection]);
 }
 const handleRightTurn = () => {
     indexDirection = calculateModulatedIndexDirected(indexDirection + 1 + 6)
+    effectTactileFeedback()
     console.log("Right", directionsArray[indexDirection]);
 }
 
