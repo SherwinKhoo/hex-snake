@@ -253,14 +253,16 @@ const buttonLeft = document.getElementById("button-left")
 const buttonCentre = document.getElementById("button-centre")
 const buttonRight = document.getElementById("button-right")
 
-let checkUpdate
-
 let score = 0
 let highscore = 0
+
+let checkUpdate
+let checkCollision
 
 const handleStartReset = () => {
     
     clearInterval(checkUpdate)
+    console.log(checkUpdate);
     updateDisplayHighscore()
     score = 0
     indexDirection = 2
@@ -277,6 +279,13 @@ const handleStartReset = () => {
             updateGame()
         }
     , 250);
+    console.log(checkUpdate);
+
+    checkCollision = setInterval(() => {
+        checkCollisionSelf()
+        checkCollisionWall()
+        checkCollisionFood()
+    }, 1)
 
     const buttonCentre = document.getElementById("button-centre")
     buttonCentre.innerHTML = ``
@@ -382,7 +391,7 @@ const checkCollisionFood = () => {
     }
 }
 
-const checkCollision = setInterval(() => {
+checkCollision = setInterval(() => {
     checkCollisionSelf()
     checkCollisionWall()
     checkCollisionFood()
